@@ -21,6 +21,14 @@ export default function (app: Application): Model<any> {
       ref: 'content/item',
       required: true,
     },
+    city: {
+      type: String,
+      required: true
+    },
+    region: {
+      type: String,
+      required: true,
+    },
   }, {
     timestamps: true
   });

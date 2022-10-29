@@ -29,6 +29,12 @@ export default function (app: Application): Model<any> {
         type: [Number]
       },
     },
+    city: {
+      type: String,
+    },
+    region: {
+      type: String,
+    },
     collectedById: {
       type: Schema.Types.ObjectId,
       ref: 'security/user',
