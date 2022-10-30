@@ -29,7 +29,7 @@
     "dev": "ts-node-dev --no-notify src/",
     "start": "npm run compile && node lib/",
     "jest": "jest --forceExit",
-    "compile": "shx rm -rf lib/ && tsc",
+    "compile": "shx rm -rf lib/ && tsc-silent --supress --project tsconfig.json",
     "docker-dev": "docker compose -f docker-compose-dev.yml up",
     "docker-dev-build": "docker compose -f docker-compose-dev.yml up --build",
     "docker-dev-down": "docker compose -f docker-compose-dev.yml down",
@@ -63,6 +63,7 @@
     "mongoose": "^6.6.5",
     "serve-favicon": "^2.5.0",
     "shx": "^0.3.4",
+    "tsc-silent": "^1.2.2",
     "uuid": "^9.0.0",
     "winston": "^3.8.1"
   },
