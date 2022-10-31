@@ -17,6 +17,7 @@ export default function (app: Application): Model<any> {
     },
     username: {
       type: String,
+      index: true,
     },
     password: {
       type: String,
