@@ -9,6 +9,7 @@ import testTest from './test/test/test.service';
 import contentItem from './content/item/item.service';
 import contentCollectedItem from './content/collected-item/collected-item.service';
 import contentPlacedItem from './content/placed-item/placed-item.service';
+import contentFlagged from './content/flagged/flagged.service';
 // Don't remove this comment. It's needed to format import lines nicely.
 
 export default function (app: Application): void {
@@ -22,4 +23,5 @@ export default function (app: Application): void {
   app.configure(contentItem);
   app.configure(contentCollectedItem);
   app.configure(contentPlacedItem);
+  app.configure(contentFlagged);
 }

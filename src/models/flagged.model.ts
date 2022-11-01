@@ -1,4 +1,4 @@
-// security/user-model.ts - A mongoose model
+// content/flagged-model.ts - A mongoose model
 //
 // See http://mongoosejs.com/docs/models.html
 // for more of what you can do here.
@@ -6,30 +6,23 @@ import { Application } from '../declarations';
 import { Model, Mongoose } from 'mongoose';
 
 export default function (app: Application): Model<any> {
-  const modelName = 'security/user';
+  const modelName = 'content/flagged';
   const mongooseClient: Mongoose = app.get('mongooseClient');
   const { Schema } = mongooseClient;
   const schema = new Schema({
-    email: {
-      type: String,
+    userId: {
+      type: Schema.Types.ObjectId,
+      ref: 'security/user',
       required: true,
       index: true,
     },
-    username: {
-      type: String,
-      index: true,
-    },
-    password: {
-      type: String,
+    collectedItemId: {
+      type: Schema.Types.ObjectId,
+      ref: 'content/collected-item',
       required: true,
     },
-    welcomeMessageSeen: {
-      type: Boolean,
-      default: false,
-    }
   }, {
-    timestamps: true,
-    
+    timestamps: true
   });
 
   // This is necessary to avoid model compilation errors in watch mode
