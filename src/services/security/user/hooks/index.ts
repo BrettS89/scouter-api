@@ -28,7 +28,7 @@ export const setRole: Hook = async context => {
       },
     });
 
-  const role = foundRole[0];
+  const role = foundRole.data[0];
 
   if (!role) {
     throw new GeneralError();
