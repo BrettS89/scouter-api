@@ -1,4 +1,4 @@
-import { hashPassword } from './hooks';
+import { hashPassword, setRole } from './hooks';
 
 export default {
   before: {
@@ -7,6 +7,7 @@ export default {
     get: [],
     create: [
       hashPassword,
+      setRole,
     ],
     update: [],
     patch: [],
