@@ -20,7 +20,10 @@ export default function (app: Application): Model<any> {
       type: Schema.Types.ObjectId,
       ref: 'storage/file',
       required: true,
-    }
+    },
+    message: {
+      type: String,
+    },
   }, {
     timestamps: true
   });

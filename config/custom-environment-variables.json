@@ -5,6 +5,7 @@
   "port": "PORT",
   "environment": "NODE_ENV",
   "sendgridApiKey": "SENDGRID_API_KEY",
+  "lightrunSecret": "LIGHTRUN_SECRET",
   "aws": {
     "s3AccessKeyId": "S3_ACCESS_KEY_ID",
     "s3SecretAccessKey": "S3_SECRET_ACCESS_KEY",

@@ -28,10 +28,14 @@ export const setRole: Hook = async context => {
       },
     });
 
-  const role = foundRole.data[0];
+  let role = foundRole.data[0];
 
   if (!role) {
-    throw new GeneralError();
+    role = await app.service('security/role').create({ name: 'user' });
+  }
+
+  if (!role) {
+    throw new GeneralError('No role was found');
   }
 
   data.roleId = role._id;
